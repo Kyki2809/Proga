@@ -42,7 +42,7 @@ int GetSum(int* array, const int size);
 * \param array Массив
 * \param size Размер массива
 **/
-void numberGreaterNext(int* array, const int size);
+void numberGreaterNext(int* array, const int size, double a);
 
 /**
 * \brief Метод,Найти номер последней пары соседних элементов с разными знаками.
@@ -99,7 +99,10 @@ int main() {
 	cout << "Сумма элементов, значения которых по модулю меньше 10 = " << GetSum(array, size) << "\n\n";
 
 	cout << "Найти количество тех элементов, значения которых положительны и не превосходят заданного числа А.:\n";
-	numberGreaterNext(array, size);
+	int a;
+	cout << "Введите 'a': ";
+	cin >> a;
+	numberGreaterNext(array, size, a);
 
 	cout << "Найти номер последней пары соседних элементов с разными знаками:\n";
 	multiplyАllmultiplesThrebyThirdElement(array, size);
@@ -140,28 +143,27 @@ int GetSum(int* array, const int size) {
 	return sum;
 }
 
-void numberGreaterNext(int* array, const int size) {
-	double A;
-	int c=0;
-	cin>>A;
+void numberGreaterNext(int* array, const int size, double a) {
+	int score = 0;
 	for (size_t i = 0; i < size; i++) {
-		if ((array[i] > 0)&&(array[i]>A) ){
-			c++;
+		if ((array[i] > 0)&&(array[i]>a) ){
+			score++;
 		}
 	}
 
-	cout << c <<"\n";
+	cout << score <<"\n";// void функция
+
 }
 
 void multiplyАllmultiplesThrebyThirdElement(int* array, const int size) {
-	int k=0;
+    bool k = false;
 	for (size_t i = 0; i < size; i++) {
 		if (array[i]*array[i-1]<0) {
 						cout<<"вот эта пара под номерами"<< i<<" "<<i-1<<" ";
-						k=1;
+						k=true;
 		}
 	}
-	if (k==0){
+	if (k==false){
 				cout<<"Таких пар нет ";
 		}
 }
