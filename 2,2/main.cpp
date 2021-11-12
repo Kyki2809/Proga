@@ -3,34 +3,35 @@
 
 using namespace std;
 /**
-* \brief вычисление функции по заданной формуле
-* \param a - константа
-* \return результат
+* \brief РІС‹С‡РёСЃР»РµРЅРёРµ С„СѓРЅРєС†РёРё РїРѕ Р·Р°РґР°РЅРЅРѕР№ С„РѕСЂРјСѓР»Рµ
+* \param x - РєРѕРЅСЃС‚Р°РЅС‚Р°
+* \return СЂРµР·СѓР»СЊС‚Р°С‚
 */
-void solution();
+int solution (int x);
 
 
 /**
-* \brief Точка входа в программу
-* \param x - входное значение x
-* \return Код ошибки (0-успех)
+* \brief РўРѕС‡РєР° РІС…РѕРґР° РІ РїСЂРѕРіСЂР°РјРјСѓ
+* \param x - РІС…РѕРґРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ x
+* \return РљРѕРґ РѕС€РёР±РєРё (0-СѓСЃРїРµС…)
 */
 
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	std::cout << "Введите x = ";
+	cout << "Р’РІРµРґРёС‚Рµ x = ";
 	int x;
 	cin >> x;
 
-	solution();
+	int sol = solution(x);
+	cout << sol;
 
 	return 0;
 }
 
 
-int solution(int x) //функция поиска решений
+int solution(int x) //С„СѓРЅРєС†РёСЏ РїРѕРёСЃРєР° СЂРµС€РµРЅРёР№
 {
 	int y;
 	const int a = 2.1;
@@ -38,12 +39,12 @@ int solution(int x) //функция поиска решений
 	if (z >= a)
 	{
 		y = a*cos((x-1)/10);
-		std::cout << "Значение y равно " << y << endl;
+		cout << "Р—РЅР°С‡РµРЅРёРµ y СЂР°РІРЅРѕ " << y << endl;
 	}
 	else
 	{
-		y = a*sin((pow(x,2)+1)/10);
-		std::cout << "Значение y равно " << y << endl;
+		y = a * sin ( ( pow (x,2) + 1) / 10);
+		cout << "Р—РЅР°С‡РµРЅРёРµ y СЂР°РІРЅРѕ " << y << endl;
 	}
 	return y;
 }

@@ -3,11 +3,21 @@
 
 using namespace std;
 
-void first_step(const int a,const int b);
+/**
+* \brief –≤—ã—á–∏—Å–ª–µ–Ω–∏–µ —Å—Ä–µ–¥–Ω–µ–≥–æ –∞—Ä–∏—Ñ–º–µ—Ç–∏—á–µ—Å–∫–æ–≥–æ
+* \param a - –∫–æ–Ω—Å—Ç–∞–Ω—Ç–∞
+* \param b - –∫–æ–Ω—Å—Ç–∞–Ω—Ç–∞
+* \return —Ä–µ–∑—É–ª—å—Ç–∞—Ç
+*/
+double first_step(const int a,const int b);
 
-void second_step(const int a,const int b);
-
-
+/**
+* \brief –≤—ã—á–∏—Å–ª–µ–Ω–∏–µ —Å—Ä–µ–¥–Ω–µ–≥–æ –≥–µ–æ–º–µ—Ç—Ä–∏—á–µ—Å–∫–æ–≥–æ
+* \param a - –∫–æ–Ω—Å—Ç–∞–Ω—Ç–∞
+* \param b - –∫–æ–Ω—Å—Ç–∞–Ω—Ç–∞
+* \return —Ä–µ–∑—É–ª—å—Ç–∞—Ç
+*/
+double second_step(const int a,const int b);
 
 
 enum path
@@ -20,9 +30,9 @@ int main() {
   setlocale(LC_ALL, "Russian");
 
 	int a, b, choice;
-	cout << "¬‚Â‰ËÚÂ ‰‚‡ ˜ËÒÎ‡";
-	cin>>a>>b;
-	cout << "¬˚·ÂËÚÂ ˜ÚÓ ‚˚ ıÓÚËÚÂ ÔÓÒ˜ËÚ‡Ú¸:\n1 - ÒÂ‰ÌÂÂ ‡ËÙÏÂÚË˜ÂÒÍÓÂ ÍÛ·Ó‚ ˝ÚËı ˜ËÒÂÎ\n2 - ÒÂ‰ÌÂÂ „ÂÓÏÂÚË˜ÂÒÍÓÂ ÏÓ‰ÛÎÂÈ ˝ÚËı ˜ËÒÂÎ\n¬˚·Ó: ";
+	cout << "–í–≤–µ–¥–∏—Ç–µ –¥–≤–∞ —á–∏—Å–ª–∞";
+	cin >> a >> b;
+	cout << "–í—ã–±–µ—Ä–∏—Ç–µ —á—Ç–æ –≤—ã —Ö–æ—Ç–∏—Ç–µ –ø–æ—Å—á–∏—Ç–∞—Ç—å:\n1 - —Å—Ä–µ–¥–Ω–µ–µ –∞—Ä–∏—Ñ–º–µ—Ç–∏—á–µ—Å–∫–æ–µ –∫—É–±–æ–≤ —ç—Ç–∏—Ö —á–∏—Å–µ–ª\n2 - —Å—Ä–µ–¥–Ω–µ–µ –≥–µ–æ–º–µ—Ç—Ä–∏—á–µ—Å–∫–æ–µ –º–æ–¥—É–ª–µ–π —ç—Ç–∏—Ö —á–∏—Å–µ–ª\n–í—ã–±–æ—Ä: ";
 	cin >> choice;
 	const auto filling = static_cast<path>(choice);
 	switch (filling) {
@@ -35,14 +45,14 @@ int main() {
 		second_step(a, b);
 	}
 	default:
-		cout << "ÕÂÍÓÂÍÚÌ˚È ‚‚Ó‰.";
+		cout << "–ù–µ–∫–æ—Ä–µ–∫—Ç–Ω—ã–π –≤–≤–æ–¥.";
 	}
 }
 
-void first_step(const int a,const int b){
-	cout<<(pow(a,3) + pow(b,3))/2;
+double first_step (const int a,const int b){
+	cout << (pow(a,3) + pow(b,3) ) / 2;
 }
 
-void second_step(const int a,const int b){
-	cout<<(fabs(a) + fabs(b))/2;
+double second_step (const int a,const int b){
+	cout << ( fabs (a) + fabs (b) ) / 2;
 }
