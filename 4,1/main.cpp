@@ -7,52 +7,52 @@ using namespace std;
 
 
 /**
-* \brief Заполнение массива случайными числами
-* \param array Массив
-* \param size Размер массива
-* \param LOW_BOUND Минимально возможное число
-* \param UP_BOUND Максимально возможное число
+* \brief Р—Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР° СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
+* \param array РњР°СЃСЃРёРІ
+* \param size Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°
+* \param LOW_BOUND РњРёРЅРёРјР°Р»СЊРЅРѕ РІРѕР·РјРѕР¶РЅРѕРµ С‡РёСЃР»Рѕ
+* \param UP_BOUND РњР°РєСЃРёРјР°Р»СЊРЅРѕ РІРѕР·РјРѕР¶РЅРѕРµ С‡РёСЃР»Рѕ
 **/
 void randomDigits(int* array, const size_t  size, const int LOW_BOUND, const int UP_BOUND);
 
 /**
-* \brief Ввод массива с клавиатуры
-* \param array Массив
-* \param size Размер массива
+* \brief Р’РІРѕРґ РјР°СЃСЃРёРІР° СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
+* \param array РњР°СЃСЃРёРІ
+* \param size Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°
 **/
 void userInput(int* array, const int  size);
 
 /**
-* \brief Вывод массива
-* \param array Массив
-* \param size Размер массива
+* \brief Р’С‹РІРѕРґ РјР°СЃСЃРёРІР°
+* \param array РњР°СЃСЃРёРІ
+* \param size Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°
 **/
 void Print(int* array, const int size);
 
 /**
-* \brief Сумма элементов массива, начения которых >0
-* \param array Массив
-* \param size Размер массива
-* \param return Значение суммы
+* \brief РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°, РЅР°С‡РµРЅРёСЏ РєРѕС‚РѕСЂС‹С… >0
+* \param array РњР°СЃСЃРёРІ
+* \param size Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°
+* \param return Р—РЅР°С‡РµРЅРёРµ СЃСѓРјРјС‹
 **/
 int GetSum(int* array, const int size);
 
 /**
-* \brief Найти количество тех элементов, значения которых положительны и не превосходят заданного числа А.
-* \param array Массив
-* \param size Размер массива
+* \brief РќР°Р№С‚Рё РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РµС… СЌР»РµРјРµРЅС‚РѕРІ, Р·РЅР°С‡РµРЅРёСЏ РєРѕС‚РѕСЂС‹С… РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹ Рё РЅРµ РїСЂРµРІРѕСЃС…РѕРґСЏС‚ Р·Р°РґР°РЅРЅРѕРіРѕ С‡РёСЃР»Р° Рђ.
+* \param array РњР°СЃСЃРёРІ
+* \param size Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°
 **/
 void numberGreaterNext(int* array, const int size, double a);
 
 /**
-* \brief Метод,Найти номер последней пары соседних элементов с разными знаками.
-* \param array Массив
-* \param size Размер массива
+* \brief РњРµС‚РѕРґ,РќР°Р№С‚Рё РЅРѕРјРµСЂ РїРѕСЃР»РµРґРЅРµР№ РїР°СЂС‹ СЃРѕСЃРµРґРЅРёС… СЌР»РµРјРµРЅС‚РѕРІ СЃ СЂР°Р·РЅС‹РјРё Р·РЅР°РєР°РјРё.
+* \param array РњР°СЃСЃРёРІ
+* \param size Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°
 **/
-void multiplyАllmultiplesThrebyThirdElement(int* array, const int size);
+void multiplyРђllmultiplesThirdElement(int* array, const int size);
 
 /**
-* \brief Выбор заполнеия массива
+* \brief Р’С‹Р±РѕСЂ Р·Р°РїРѕР»РЅРµРёСЏ РјР°СЃСЃРёРІР°
 **/
 enum class Filling
 {
@@ -62,8 +62,8 @@ enum class Filling
 
 
 /**
-* \brief Точка входа в программу
-* \return Код ошибки (0-успех)
+* \brief РўРѕС‡РєР° РІС…РѕРґР° РІ РїСЂРѕРіСЂР°РјРјСѓ
+* \return РљРѕРґ РѕС€РёР±РєРё (0-СѓСЃРїРµС…)
 **/
 int main() {
 	setlocale(LC_ALL, "ru");
@@ -71,13 +71,13 @@ int main() {
 
 	const int LOW_BOUND = -40, UP_BOUND = 40;
 
-	cout << "Введите количество элементов массива: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: ";
 	int* array;
 	int size;
 	cin >> size;
 
 	array = new int[size];
-	cout << "1 - Сгенерировать массив\n2 - Заполнить массив вручную\n";
+	cout << "1 - РЎРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ РјР°СЃСЃРёРІ\n2 - Р—Р°РїРѕР»РЅРёС‚СЊ РјР°СЃСЃРёРІ РІСЂСѓС‡РЅСѓСЋ\n";
 	int choice;
 	cin >> choice;
 
@@ -93,19 +93,19 @@ int main() {
 		Print(array, size);
 		break;
 	default:
-		cout << "Ошибка! Не выбран ни один из вариантов";
+		cout << "РћС€РёР±РєР°! РќРµ РІС‹Р±СЂР°РЅ РЅРё РѕРґРёРЅ РёР· РІР°СЂРёР°РЅС‚РѕРІ";
 	}
 
-	cout << "Сумма элементов, значения которых по модулю меньше 10 = " << GetSum(array, size) << "\n\n";
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ, Р·РЅР°С‡РµРЅРёСЏ РєРѕС‚РѕСЂС‹С… РїРѕ РјРѕРґСѓР»СЋ РјРµРЅСЊС€Рµ 10 = " << GetSum(array, size) << "\n\n";
 
-	cout << "Найти количество тех элементов, значения которых положительны и не превосходят заданного числа А.:\n";
+	cout << "РќР°Р№С‚Рё РєРѕР»РёС‡РµСЃС‚РІРѕ С‚РµС… СЌР»РµРјРµРЅС‚РѕРІ, Р·РЅР°С‡РµРЅРёСЏ РєРѕС‚РѕСЂС‹С… РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹ Рё РЅРµ РїСЂРµРІРѕСЃС…РѕРґСЏС‚ Р·Р°РґР°РЅРЅРѕРіРѕ С‡РёСЃР»Р° Рђ.:\n";
 	int a;
-	cout << "Введите 'a': ";
+	cout << "Р’РІРµРґРёС‚Рµ 'a': ";
 	cin >> a;
 	numberGreaterNext(array, size, a);
 
-	cout << "Найти номер последней пары соседних элементов с разными знаками:\n";
-	multiplyАllmultiplesThrebyThirdElement(array, size);
+	cout << "РќР°Р№С‚Рё РЅРѕРјРµСЂ РїРѕСЃР»РµРґРЅРµР№ РїР°СЂС‹ СЃРѕСЃРµРґРЅРёС… СЌР»РµРјРµРЅС‚РѕРІ СЃ СЂР°Р·РЅС‹РјРё Р·РЅР°РєР°РјРё:\n";
+	multiplyРђllmultiplesThirdElement(array, size);
 
 	delete[] array;
 
@@ -151,19 +151,19 @@ void numberGreaterNext(int* array, const int size, double a) {
 		}
 	}
 
-	cout << score <<"\n";// void функция
+	cout << score <<"\n";// void С„СѓРЅРєС†РёСЏ
 
 }
 
-void multiplyАllmultiplesThrebyThirdElement(int* array, const int size) {
+void multiplyРђllmultiplesThirdElement(int* array, const int size) {
     bool k = false;
 	for (size_t i = 0; i < size; i++) {
 		if (array[i]*array[i-1]<0) {
-						cout<<"вот эта пара под номерами"<< i<<" "<<i-1<<" ";
+						cout<<"РІРѕС‚ СЌС‚Р° РїР°СЂР° РїРѕРґ РЅРѕРјРµСЂР°РјРё"<< i<<" "<<i-1<<" ";
 						k=true;
 		}
 	}
 	if (k==false){
-				cout<<"Таких пар нет ";
+				cout<<"РўР°РєРёС… РїР°СЂ РЅРµС‚ ";
 		}
 }
