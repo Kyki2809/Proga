@@ -5,7 +5,6 @@
 #include <ctime>
 using namespace std;
 
-
 /**
 * \brief Заполнение массива случайными числами
 * \param array Массив
