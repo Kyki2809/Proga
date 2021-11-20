@@ -1,16 +1,16 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 
-/*
+/**
 * \brief Функция для расчета y
 * \param x Параметр x
 * \return Параметр y
 */
 double GetY(double x);
 
-/*
+/**
 * \brief Ввод значения х в программу
 * \return Конечное значение
 */
@@ -21,8 +21,8 @@ int main()
     double x;
     cout << "Введите значение x = ";
     cin >> x;
-    int LOW_BOUND = 0;
-    int UP_BOUND = 0.85;
+    double LOW_BOUND = 0;
+    double UP_BOUND = 0.85;
     double step = 0.05;
 
 
@@ -31,7 +31,7 @@ int main()
         {
             if (x >= LOW_BOUND && x <= UP_BOUND)
             {
-                auto y = GetY(x);
+                const auto y = GetY(x);
 
                 cout << " y = " << y << "\n";
             }
