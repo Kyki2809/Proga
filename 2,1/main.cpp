@@ -4,22 +4,24 @@
 using namespace std;
 
 /**
-* \brief вычисление среднего арифметического
-* \param a - константа
-* \param b - константа
-* \return результат
+* \brief вычисление среднего арифметического.
+* \param value1 - константа.
+* \param value2 - константа.
+* \return среднее арифметическое.
 */
-double first_step(const int a,const int b);
+double arithmetic_mean(const double value1,const double value2);
 
 /**
-* \brief вычисление среднего геометрического
-* \param a - константа
-* \param b - константа
-* \return результат
+* \brief вычисление среднего геометрического.
+* \param value1 - константа.
+* \param value2 - константа.
+* \return среднее геометрическое.
 */
-double second_step(const int a,const int b);
+double geometric_mean(const double value1,const double value2);
 
-
+/**
+* \brief выбор что user хочет посчитать.
+*/
 enum path
 {
 	first = 1,
@@ -29,30 +31,33 @@ enum path
 int main() {
   setlocale(LC_ALL, "Russian");
 
-	int a, b, choice;
+	int value1, value2, choice;
 	cout << "Введите два числа";
-	cin >> a >> b;
+	cin >> value1 >> value2;
 	cout << "Выберите что вы хотите посчитать:\n1 - среднее арифметическое кубов этих чисел\n2 - среднее геометрическое модулей этих чисел\nВыбор: ";
 	cin >> choice;
 	const auto filling = static_cast<path>(choice);
 	switch (filling) {
 	case path::first:
 	{
-		first_step(a, b);
+		arithmetic_mean(value1, value2);
+		break;
 	}
 	case path::second:
 	{
-		second_step(a, b);
+		geometric_mean(value1, value2);
+		break;
 	}
 	default:
 		cout << "Некоректный ввод.";
+		break;
 	}
 }
 
-double first_step (const int a,const int b){
-	cout << (pow(a,3) + pow(b,3) ) / 2;
+double arithmetic_mean (const double value1,const double value2){
+	return ( (pow(value1,3) + pow(value2,3) ) / 2 );
 }
 
-double second_step (const int a,const int b){
-	cout << ( fabs (a) + fabs (b) ) / 2;
+double geometric_mean (const double value1,const double value2){
+	return ( ( fabs (value1) + fabs (value2) ) / 2 );
 }
