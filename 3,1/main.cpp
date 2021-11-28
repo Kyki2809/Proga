@@ -5,10 +5,10 @@ using namespace std;
 
 /**
 * \brief Функция для расчета y
-* \param x Параметр x
-* \return Параметр y
+* \param x Аргумент x
+* \return Значение y
 */
-double GetY(double x);
+double GetY(const double x);
 
 /**
 * \brief Ввод значения х в программу
@@ -18,32 +18,18 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
 
-    double x;
-    cout << "Введите значение x = ";
-    cin >> x;
-    double LOW_BOUND = 0;
-    double UP_BOUND = 0.85;
-    double step = 0.05;
+    const double stepX = 0.05, limit = 1.01;
+    double x = 0;
 
 
-        for (x; x >= LOW_BOUND && x <= UP_BOUND; x += step)
-
-        {
-            if (x >= LOW_BOUND && x <= UP_BOUND)
-            {
-                const auto y = GetY(x);
-
-                cout << " y = " << y << "\n";
-            }
-            else
-            {
-                cout << " Нет решения, так как х не входит в область определения " << endl;
-            }
-        }
-    return 0;
+    while (x <= limit) 
+    { 
+        cout << " Veriable x: " << x << " |" << " Veriable function: " << GetY(x) << endl; 
+        x += stepX; 
+    }
 }
 
-double GetY(double x)
+double GetY(const double x)
 {
-    return x - ( 1 / (3 + sin (3.6*x) ) );
+    return x - ( 1 / ( 3 + sin ( 3.6 * x ) ) );
 }
