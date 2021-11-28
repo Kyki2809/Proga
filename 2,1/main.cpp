@@ -4,23 +4,23 @@
 using namespace std;
 
 /**
-* \brief вычисление среднего арифметического.
-* \param value1 - константа.
-* \param value2 - константа.
-* \return среднее арифметическое.
+* \brief вычисление среднего арифметического кубов двух чисел
+* \param a - первое число
+* \param b - второе число
+* \return среднее арифметическое кубов двух чисел
 */
-double arithmetic_mean(const double value1,const double value2);
+double AverageMean(double a, double b);
 
 /**
-* \brief вычисление среднего геометрического.
-* \param value1 - константа.
-* \param value2 - константа.
-* \return среднее геометрическое.
+* \brief вычисление среднего геометрического модулей двух чисел
+* \param a - первое число
+* \param b - второе число
+* \return среднее геометрическое модулей двух чисел
 */
-double geometric_mean(const double value1,const double value2);
+double GeometricMean(double a, double b);
 
 /**
-* \brief выбор что user хочет посчитать.
+* \brief меню выбора, что вычислить - среднее арифметическое или среднее геометрическое
 */
 enum path
 {
@@ -29,35 +29,37 @@ enum path
 };
 
 int main() {
-  setlocale(LC_ALL, "Russian");
+	setlocale(LC_ALL, "Russian");
 
-	int value1, value2, choice;
+	double a, b, choice;
 	cout << "Введите два числа";
-	cin >> value1 >> value2;
+	cin >> a;
+	cin >> b;
 	cout << "Выберите что вы хотите посчитать:\n1 - среднее арифметическое кубов этих чисел\n2 - среднее геометрическое модулей этих чисел\nВыбор: ";
 	cin >> choice;
-	const auto filling = static_cast<path>(choice);
-	switch (filling) {
+	const int choosing = static_cast<path>(choice);
+	switch (choosing) {
 	case path::first:
 	{
-		arithmetic_mean(value1, value2);
+		double average_mean = AverageMean(a, b);
+		cout << average_mean;
 		break;
 	}
 	case path::second:
 	{
-		geometric_mean(value1, value2);
+		double geometric_mean = GeometricMean(a, b);
+		cout << geometric_mean;
 		break;
 	}
-	default:
-		cout << "Некоректный ввод.";
-		break;
-	}
+	} return 0;
 }
 
-double arithmetic_mean (const double value1,const double value2){
-	return ( (pow(value1,3) + pow(value2,3) ) / 2 );
+double AverageMean(double a, double b) {
+	double average = ((pow(a, 3) + pow(b, 3)) / 2);
+	return average;
 }
 
-double geometric_mean (const double value1,const double value2){
-	return ( ( fabs (value1) + fabs (value2) ) / 2 );
+double GeometricMean(double a, double b) {
+	double geometric = (fabs(a) + fabs(b)) / 2;
+	return geometric;
 }
