@@ -28,6 +28,7 @@ double GetB(const double x, const double y, const double z);
  * \return Код ошибки (0 - успех).
  */
 int main() {
+	
 	const double x = -4.8;
 	const double y = 17.5;
 	const double z = 3.2;
