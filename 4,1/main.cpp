@@ -1,8 +1,7 @@
-#define _USE_MATH_DEFINES // for C++
-
 #include <iostream>
 #include <iomanip>
 #include <ctime>
+
 using namespace std;
 
 /**
@@ -12,21 +11,21 @@ using namespace std;
 * \param LOW_BOUND Минимально возможное число
 * \param UP_BOUND Максимально возможное число
 **/
-void randomDigits(int* array, const size_t  size, const int LOW_BOUND, const int UP_BOUND);
+void RandomDigits(int* array, const size_t  size, const int LOW_BOUND, const int UP_BOUND);
 
 /**
 * \brief Ввод массива с клавиатуры
 * \param array Массив
 * \param size Размер массива
 **/
-void userInput(int* array, const int  size);
+void UserInput(int* array, const size_t  size);
 
 /**
 * \brief Вывод массива
 * \param array Массив
 * \param size Размер массива
 **/
-void Print(int* array, const int size);
+void Print(int* array, const size_t size);
 
 /**
 * \brief Сумма элементов массива, начения которых >0
@@ -34,21 +33,21 @@ void Print(int* array, const int size);
 * \param size Размер массива
 * \param return Значение суммы
 **/
-int GetSum(int* array, const int size);
+int GetSum(int* array, const size_t size);
 
 /**
 * \brief Найти количество тех элементов, значения которых положительны и не превосходят заданного числа А.
 * \param array Массив
 * \param size Размер массива
 **/
-void numberGreaterNext(int* array, const int size, double a);
+void NumberGreaterNext(int* array, const size_t size, double a);
 
 /**
 * \brief Метод,Найти номер последней пары соседних элементов с разными знаками.
 * \param array Массив
 * \param size Размер массива
 **/
-void multiplyАllmultiplesThirdElement(int* array, const int size);
+void MultiplyАllmultiplesThirdElement(int* array, const size_t size);
 
 /**
 * \brief Выбор заполнеия массива
@@ -84,11 +83,11 @@ int main() {
 	switch (filling)
 	{
 	case Filling::RANDOM:
-		randomDigits(array, size, LOW_BOUND, UP_BOUND);
+		RandomDigits(array, size, LOW_BOUND, UP_BOUND);
 		Print(array, size);
 		break;
 	case Filling::USER:
-		userInput(array, size);
+		UserInput(array, size);
 		Print(array, size);
 		break;
 	default:
@@ -101,30 +100,34 @@ int main() {
 	int a;
 	cout << "Введите 'a': ";
 	cin >> a;
-	numberGreaterNext(array, size, a);
+	NumberGreaterNext(array, size, a);
 
 	cout << "Найти номер последней пары соседних элементов с разными знаками:\n";
-	multiplyАllmultiplesThirdElement(array, size);
+	MultiplyАllmultiplesThirdElement(array, size);
 
-	delete[] array;
+	if (array != nullptr)
+	{
+		delete[] array;
+		array = nullptr;
+	};
 
 	return 0;
 }
 
-void randomDigits(int* array, const size_t  size, const int LOW_BOUND, const int UP_BOUND) {
+void RandomDigits(int* array, const size_t  size, const int LOW_BOUND, const int UP_BOUND) {
 	for (size_t i = 0; i < size; i++) {
 		array[i] = rand() % (2 * UP_BOUND + 1) + LOW_BOUND;
 	}
 }
 
-void userInput(int* array, const int  size) {
+void UserInput(int* array, const size_t  size) {
 	for (size_t i = 0; i < size; i++) {
 		cout << "arr[" << i << "] = ";
 		cin >> array[i];
 	}
 }
 
-void Print(int* array, const int size) {
+void Print(int* array, const size_t size) {
 	cout << "array[" << size << "]" << "= {";
 	for (size_t i = 0; i < size - 1; i++) {
 		cout << array[i] << ";" << setw(3);
@@ -132,37 +135,37 @@ void Print(int* array, const int size) {
 	cout << array[size - 1] << "}\n\n";
 }
 
-int GetSum(int* array, const int size) {
+int GetSum(int* array, const size_t size) {
 	int sum = 0;
 	for (size_t i = 0; i < size; i++) {
-		if (array[i] < 0) {
+		if (abs(array[i]) < 10) {
 			sum += array[i];
 		}
 	}
 	return sum;
 }
 
-void numberGreaterNext(int* array, const int size, double a) {
+void NumberGreaterNext(int* array, const size_t size, double a) {
 	int score = 0;
 	for (size_t i = 0; i < size; i++) {
-		if ((array[i] > 0)&&(array[i]>a) ){
+		if ((array[i] > 0) && (array[i] > a)) {
 			score++;
 		}
 	}
 
-	cout << score <<"\n";// void функция
+	cout << score << "\n";// void функция
 
 }
 
-void multiplyАllmultiplesThirdElement(int* array, const int size) {
-    bool k = false;
-	for (size_t i = 0; i < size; i++) {
-		if (array[i]*array[i-1]<0) {
-						cout<<"вот эта пара под номерами"<< i<<" "<<i-1<<" ";
-						k=true;
+void MultiplyАllmultiplesThirdElement(int* array, const size_t size) {
+	bool k = false;
+	for (size_t i = 1; i < size; i++) {
+		if (array[i] * array[i - 1] < 0) {
+			cout << "вот эта пара под номерами" << i << " " << i - 1 << " ";
+			k = true;
 		}
 	}
-	if (k==false){
-				cout<<"Таких пар нет ";
-		}
+	if (k == false) {
+		cout << "Таких пар нет ";
+	}
 }
