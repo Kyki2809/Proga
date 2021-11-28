@@ -55,11 +55,11 @@ int main() {
 }
 
 double AverageMean(double a, double b) {
-	double average = ((pow(a, 3) + pow(b, 3)) / 2);
+	double average = ( ( pow( a, 3 ) + pow( b, 3 ) ) / 2 );
 	return average;
 }
 
 double GeometricMean(double a, double b) {
-	double geometric = (fabs(a) + fabs(b)) / 2;
+	double geometric = ( fabs( a ) + fabs( b ) ) / 2 ;
 	return geometric;
 }
