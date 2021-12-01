@@ -22,10 +22,10 @@ double GeometricMean(double a, double b);
 /**
 * \brief меню выбора, что вычислить - среднее арифметическое или среднее геометрическое
 */
-enum path
+enum class path
 {
-	first = 1,
-	second = 2
+	first,
+	second 
 };
 
 int main() {
@@ -37,7 +37,7 @@ int main() {
 	cin >> b;
 	cout << "Выберите что вы хотите посчитать:\n1 - среднее арифметическое кубов этих чисел\n2 - среднее геометрическое модулей этих чисел\nВыбор: ";
 	cin >> choice;
-	const int choosing = static_cast<path>(choice);
+	const auto choosing = static_cast<path>(choice);
 	switch (choosing) {
 	case path::first:
 	{
