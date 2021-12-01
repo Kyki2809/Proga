@@ -7,18 +7,18 @@ using namespace std;
 
 /**
 * \brief Математическая функция, рассчитывающая значение a
-* \param const double x - константа, имеющая тип данных с плавающей точкой двойной точности
-* \param const double y - константа, имеющая тип данных с плавающей точкой двойной точности
-* \param const double z - константа, имеющая тип данных с плавающей точкой двойной точности
+* \param const double x - константа, х имеющая тип данных с плавающей точкой 
+* \param const double y - константа, y имеющая тип данных с плавающей точкой 
+* \param const double z - константа, z имеющая тип данных с плавающей 
 * \return значение a
 **/
 double GetA(const double x, const double y, const double z);
 
 /**
 * \brief Математическая функция, рассчитывающая значение b
-* \param const double x - константа, имеющая тип данных с плавающей точкой двойной точности
-* \param const double y - константа, имеющая тип данных с плавающей точкой двойной точности
-* \param const double z - константа, имеющая тип данных с плавающей точкой двойной точности
+* \param const double x - константа, х имеющая тип данных с плавающей точкой 
+* \param const double y - константа, y имеющая тип данных с плавающей точкой 
+* \param const double z - константа, z имеющая тип данных с плавающей 
 * \return значение b
 **/
 double GetB(const double x, const double y, const double z);
